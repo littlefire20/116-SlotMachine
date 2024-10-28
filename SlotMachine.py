@@ -64,8 +64,13 @@ def main():
         balance += payout
 
         play_again = input("Would you like to spin again? (Y/N): ").upper()
-        if play_again != 'Y':
+        if play_again == 'Y':
+            continue
+        elif play_again == 'N':
             break
+        else:
+            print("Please enter Y or N")
+            continue
     if balance == 0:
         restart = input("Would you like to try again? (Y/N)").upper()
     if restart == 'Y':
