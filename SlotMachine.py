@@ -71,8 +71,7 @@ def main():
         else:
             print("Please enter Y or N")
             continue
-    if balance == 0:
-        restart = input("Would you like to try again? (Y/N)").upper()
+    restart = input("Would you like to try again? (Y/N)").upper()
     if restart == 'Y':
         main()
     else:
