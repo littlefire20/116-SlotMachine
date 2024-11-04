@@ -35,19 +35,13 @@ def main():
 
         bet = input("Place your bet amount: ")
 
-        if not bet.isdigit():
-            print("Please enter a valid number.")
-            continue
+        if not bet.isdigit(): print("Please enter a valid number."); continue
 
         bet = int(bet)
 
-        if bet>balance:
-            print("Insufficient funds.")
-            continue
+        if bet>balance: print("Insufficient funds."); continue
 
-        if bet <=0:
-            print("Bet must be greater than 0.")
-            continue
+        if bet <=0:print("Bet must be greater than 0."); continue
 
         balance -= bet
         row = spin_row()
@@ -56,10 +50,7 @@ def main():
 
         payout = get_payout(row, bet)
 
-        if payout> 0:
-            print(f"You won ${payout}")
-        else:
-            print("Sorry you lost.")
+        print(f"You won ${payout}") if payout> 0 else print("Sorry you lost.")
 
         balance += payout
 
@@ -71,10 +62,6 @@ def main():
         else:
             print("Please enter Y or N")
             continue
-    restart = input("Would you like to try again? (Y/N)").upper()
-    if restart == 'Y':
-        main()
-    else:
-        print(f"Game Over! Your final balance is ${balance}") 
+
 if __name__ == '__main__':
     main()
